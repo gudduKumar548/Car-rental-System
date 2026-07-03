@@ -49,7 +49,6 @@ Car-rental-System/
 ```
 git clone https://github.com/gudduKumar548/Car-rental-System.git
 ```
-
 ### 2. Navigate to project folder
 
 ```
