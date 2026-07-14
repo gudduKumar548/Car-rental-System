@@ -21,7 +21,7 @@ class Car {
     }
 
     // Getters
-    public int    getCarId()       { return carId; }
+    public int getCarId()       { return carId; }
     public String getModelName()   { return modelName; }
     public String getBrand()       { return brand; }
     public double getPricePerDay() { return pricePerDay; }
@@ -48,17 +48,17 @@ class Car {
 class RentalRecord {
 
     private String customerName;
-    private int    carId;
+    private int carId;
     private String carModel;
-    private int    days;
+    private int days;
     private double totalCost;
 
     public RentalRecord(String customerName, int carId, String carModel, int days, double totalCost) {
         this.customerName = customerName;
-        this.carId        = carId;
-        this.carModel     = carModel;
-        this.days         = days;
-        this.totalCost    = totalCost;
+        this.carId = carId;
+        this.carModel = carModel;
+        this.days = days;
+        this.totalCost = totalCost;
     }
 
     @Override
@@ -72,7 +72,7 @@ class RentalRecord {
 // ── CAR RENTAL SYSTEM CLASS (Main Logic) ─────────────
 class CarRentalSystem {
 
-    private List<Car>          carList     = new ArrayList<>();
+    private List<Car> carList = new ArrayList<>();
     private List<RentalRecord> rentalHistory = new ArrayList<>(); // stores all past rentals
 
     // ── Add Car ───────────────────────────────────────
