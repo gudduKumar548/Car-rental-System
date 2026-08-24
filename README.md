@@ -1,31 +1,75 @@
-# 🚗 Car Rental System
+<h1 align="center">🚗 Car Rental System</h1>
 
-A simple **Java-based Car Rental System** that allows users to manage cars, perform rental operations, and maintain records using a console-based interface.
+<p align="center">
+  A clean, console-based <b>Car Rental System</b> built in core Java —<br/>
+  manage cars, handle rentals, and generate slips, all from the terminal.
+</p>
 
-This project demonstrates core **Object-Oriented Programming (OOP)** concepts and basic **CRUD operations** in Java.
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-17%2B-orange?style=flat-square&logo=openjdk&logoColor=white" alt="Java"/>
+  <img src="https://img.shields.io/badge/Paradigm-OOP-blue?style=flat-square" alt="OOP"/>
+  <img src="https://img.shields.io/badge/Interface-CLI-black?style=flat-square" alt="CLI"/>
+  <img src="https://img.shields.io/badge/Status-Active-success?style=flat-square" alt="Status"/>
+</p>
 
 ---
 
-## 📌 Features
+## 📖 Overview
 
-* ➕ Add a new car
-* ❌ Remove an existing car
-* 📋 View all cars
-* 🔍 Search car by ID
-* 🔎 Search car by model
-* 🚗 Rent a car
-* 🔄 Return a car
-* 💰 Update car price
-* 🧾 Generate rental slip
+A menu-driven rental management app that demonstrates **Object-Oriented Programming** and **CRUD operations** in Java — no frameworks, no external dependencies, just the core language and collections.
+
+Built to practice clean class design, state management, and input handling in a real-world-shaped problem.
+
+---
+
+## ✨ Features
+
+| | Feature | Description |
+|:--:|---|---|
+| ➕ | **Add Car** | Register a new car with ID, model, and daily price |
+| ❌ | **Remove Car** | Delete a car from the inventory |
+| 📋 | **View All Cars** | List every car with live availability status |
+| 🔍 | **Search by ID** | Instant lookup using the unique car ID |
+| 🔎 | **Search by Model** | Find cars matching a model name |
+| 🚗 | **Rent a Car** | Mark a car as rented and block double-booking |
+| 🔄 | **Return a Car** | Restore availability on return |
+| 💰 | **Update Price** | Change the per-day rate anytime |
+| 🧾 | **Rental Slip** | Generate a formatted billing summary |
 
 ---
 
 ## 🛠️ Tech Stack
 
-* **Java**
-* OOP (Classes & Objects)
-* ArrayList (Collections)
-* Scanner (User Input)
+| Layer | Choice |
+|---|---|
+| **Language** | Java |
+| **Design** | OOP — encapsulation, classes & objects |
+| **Storage** | `ArrayList` (in-memory collection) |
+| **Input** | `Scanner` (console I/O) |
+
+---
+
+## 🧠 Architecture
+
+```
+┌──────────────────────┐
+│        Main          │  ← menu loop, user input, routing
+└──────────┬───────────┘
+           │
+┌──────────▼───────────┐
+│  CarRentalSystem     │  ← business logic (add, rent, return, search)
+└──────────┬───────────┘
+           │
+┌──────────▼───────────┐
+│        Car           │  ← data model (id, model, price, isAvailable)
+└──────────────────────┘
+```
+
+**`Car`** — the entity. Holds car ID, model name, price per day, and availability flag.
+
+**`CarRentalSystem`** — the service layer. Owns the car list and exposes all operations: add, remove, search, rent, return, update price, display.
+
+**`Main`** — the entry point. Renders the menu and delegates every action to the service layer.
 
 ---
 
@@ -33,108 +77,89 @@ This project demonstrates core **Object-Oriented Programming (OOP)** concepts an
 
 ```
 Car-rental-System/
-│
 ├── README.md
-└── Car Rental System/
-    └── Car Rental System/
-        └── Main.java
+└── src/
+    └── Main.java
 ```
 
 ---
 
-## ⚙️ How to Run
+## ⚙️ Getting Started
 
-### 1. Clone the repository
+**Prerequisites:** JDK 8 or above ([download](https://adoptium.net/))
 
-```
+```bash
+# 1. Clone the repository
 git clone https://github.com/gudduKumar548/Car-rental-System.git
-```
-### 2. Navigate to project folder
 
-```
+# 2. Enter the project folder
 cd Car-rental-System
-```
 
-### 3. Compile the Java file
+# 3. Compile
+javac -d out src/Main.java
 
-```
-javac "Car Rental System/Car Rental System/Main.java"
-```
-
-### 4. Run the program
-
-```
-java -cp "Car Rental System/Car Rental System" Main
+# 4. Run
+java -cp out Main
 ```
 
 ---
 
-## 🧠 How It Works
-
-### 🔹 Car Class
-
-Represents a car with:
-
-* Car ID
-* Model Name
-* Price Per Day
-* Availability
-
----
-
-### 🔹 CarRentalSystem Class
-
-Handles:
-
-* Add / Remove Car
-* Search Car
-* Rent / Return
-* Price Update
-* Display Cars
-
----
-
-### 🔹 Main Class
-
-Provides a **menu-driven interface** for user interaction.
-
----
-
-## 📋 Menu Options
+## 📋 Menu Preview
 
 ```
-1. Add Car
-2. Remove Car
-3. View All Cars
-4. Search Car by ID
-5. Search Car by Model
-6. Rent a Car
-7. Return a Car
-8. Update Car Price
-0. Exit
+╔════════════════════════════════════╗
+║      CAR RENTAL SYSTEM MENU        ║
+╠════════════════════════════════════╣
+║  1. Add Car                        ║
+║  2. Remove Car                     ║
+║  3. View All Cars                  ║
+║  4. Search Car by ID               ║
+║  5. Search Car by Model            ║
+║  6. Rent a Car                     ║
+║  7. Return a Car                   ║
+║  8. Update Car Price               ║
+║  0. Exit                           ║
+╚════════════════════════════════════╝
+Enter your choice:
 ```
 
 ---
 
-## 📚 Learning Outcomes
+## 📚 What I Learned
 
-* Java fundamentals
-* OOP concepts
-* Console-based application development
-* Data handling using collections
+- Modelling real-world entities as Java classes
+- Applying encapsulation and separation of concerns
+- Managing collections with `ArrayList` (search, filter, remove)
+- Handling user input safely in a menu-driven loop
+- Structuring a small application into clear, single-responsibility layers
 
 ---
 
-## 🚀 Future Improvements
+## 🚀 Roadmap
 
-* Database integration
-* GUI / Web version
-* User authentication
-* Booking history
+- [ ] Persist data with a database (MySQL / PostgreSQL)
+- [ ] Add user authentication (admin vs customer)
+- [ ] Maintain booking history with rental dates
+- [ ] Auto-calculate total cost from rental duration
+- [ ] Build a REST API layer with Spring Boot
+- [ ] Ship a web or GUI front-end
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome — fork the repo, create a feature branch, and open a pull request.
 
 ---
 
 ## 👨‍💻 Author
 
 **Guddu Kumar**
-🔗 https://github.com/gudduKumar548
+
+[![GitHub](https://img.shields.io/badge/GitHub-gudduKumar548-181717?style=flat-square&logo=github)](https://github.com/gudduKumar548)
+
+---
+
+<p align="center">
+  ⭐ If this project helped you, consider giving it a star!
+</p>
